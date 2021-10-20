@@ -1,0 +1,6 @@
+services:
+  dash:
+    build: .
+    ports:
+      - "9696:80"
+    entrypoint: streamlit run dash.py --server.port=80
