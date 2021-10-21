@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: streamlit run dash.py --server.port=${PORT}
+  web: streamlit run savagewattage.py --server.port=${PORT}
