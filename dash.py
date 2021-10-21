@@ -9,11 +9,15 @@ with st.sidebar:
 
 if selection == "Zones":
     st.markdown("### Zones Calculator")
-    ftp = int(st.number_input("Enter FTP:"))
+    ftp = st.number_input(
+        label = "Enter FTP:",
+        min_value = 0,
+        max_value = 999,
+        step = 1,
+    )
 
-    if ftp > 0:
-        for templ in templates:
-            st.text(str(Interval.from_template(ftp=ftp,template=templ)))
+    for templ in templates:
+        st.text(str(Interval.from_template(ftp=ftp,template=templ)))
 
 if selection == "Ramps":
     st.markdown("### Ramp Test Calculator")
@@ -52,9 +56,19 @@ if selection == "Ramps":
             """
         )
 
-    completed = int(st.number_input("Enter the wattage of the last completed ramp:"))
+    completed = st.number_input(
+        label = "Enter the wattage of the last completed ramp:",
+        min_value = 0,
+        max_value = 975,
+        step = 25,
+    )
     if completed > 0:
-        extra = int(st.number_input("Enter the number of seconds of the last failed ramp:"))
+        extra = st.number_input(
+            label = "Enter the number of seconds of the last failed ramp:",
+            min_value = 0,
+            max_value = 150,
+            step = 1,
+        )
         est_ftp = estimate_ftp(completed=completed,extra=extra)
 
         st.text(f"Estimated ftp is {est_ftp}.")
