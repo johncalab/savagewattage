@@ -26,8 +26,8 @@ if selection == "Ramps":
         * Go until failure.
 
         Record two things:
-            - completed: wattage of last SUCCESSFUL ramp
-            - extra: seconds of last failed ramp
+        * wattage of last SUCCESSFUL ramp
+        * seconds (if any) of last failed ramp
         """
     )
 
@@ -46,7 +46,7 @@ if selection == "Ramps":
             - 150 seconds @300W
             - 13 seconds @325
 
-            completed  = 300, extra = 13
+            completed  = 300W, extra = 13s
 
             leading to an estimated ftp of: 249
             """
