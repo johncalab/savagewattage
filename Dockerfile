@@ -7,3 +7,4 @@ COPY ./dash.py .
 COPY ./savagewattage ./savagewattage
 
 RUN python -m pip install .
+CMD streamlit run dash.py --server.port=80
